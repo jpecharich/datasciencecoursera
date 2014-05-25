@@ -1,14 +1,18 @@
 #Constructs a matrix whose inverse will be cached
 makeCacheMatrix<-function(A = matrix()){
+  #Sets inv to the null function and sets the value of A
     inv<-NULL
     set<-function(y){
       A<<-y
       inv<<-NULL
     }
     
-  #  
+  #Retrieves the matrix A
   get<-function() A
+  
+  
   setsolve<-function(solve) inv<<-solve
+  #Stores the inverse of A if it has been calculated
   getsolve<-function() inv
   
   #Constructs a list that contains the matrix and its inverse
